@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column; /* Disposer les éléments en colonne */
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(5px); /* Effet de flou */
+    padding: 20px; /* Réduit le padding pour diminuer la hauteur */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assure que l'entête est au-dessus du reste */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la hauteur totale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous l'entête */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Disposer le logo et le titre en colonne */
+    align-items: center;
+    background: transparent; /* Fond transparent pour le contenu */
+    padding: 10px; /* Réduit le padding pour diminuer l'espace autour du contenu */
+    border-radius: 10px; /* Coins arrondis */
+    position: relative; /* Position relative pour permettre le positionnement des boutons */
+    z-index: 1100; /* Assure que le contenu est au-dessus du fond */
+}
+
+.download-button {
+    background: transparent; /* Fond transparent pour le bouton */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-left: 20px; /* Espace entre le titre et le bouton */
+}
+
+.download-icon {
+    height: 80px; /* Taille de l'icône */
+    width: 200px; /* Taille de l'icône */
+}
+
+.download-button:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'icône au survol */
+}
+
+.logo {
+    height: 150px; /* Réduit la hauteur du logo pour s'adapter à la nouvelle hauteur */
+    margin-bottom: 10px; /* Espace entre le logo et le titre */
+}
+
+.title {
+    font-size: 192px; /* Taille du titre augmentée par 2 */
+    color: #333;
+    margin: 0; /* Enlève les marges par défaut */
+    text-align: center; /* Centre le texte */
+}
+
+.social-buttons {
+    display: flex;
+    position: fixed; /* Position fixe pour placer les boutons en haut à gauche de la page */
+    top: 20px; /* Espace depuis le haut de la page */
+    left: 20px; /* Espace depuis le côté gauche de la page */
+    z-index: 1200; /* Assure que les boutons sont au-dessus du contenu */
+    background: transparent; /* Fond transparent pour les boutons */
+}
+
+.social-icon {
+    height: 80px;
+    margin: 0 15px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre sous les boutons sociaux */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 280px; /* Ajusté pour ne pas être caché derrière le header */
+    position: relative; /* Position relative pour les éléments enfants */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de largeur égale */
+    gap: 90px; /* Augmente l'espace entre les vidéos */
+    max-width: 2000px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.video-item iframe {
+    width: 120%;
+    height: 300px; /* Augmente la hauteur des vidéos pour les agrandir */
+    border: none;
+}
